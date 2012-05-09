@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'morgart_crud' target in the 'morgart_crud' project
+//
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+#endif
