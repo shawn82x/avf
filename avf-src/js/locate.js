@@ -1,9 +1,55 @@
 
+/*
+var watchID = null;
+    // Wait for Cordova to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // Cordova is ready
+    //
+    function onDeviceReady() {
+        navigator.alert('Cordova is ready');
+    }
+
+    function getCurrentPosition() {
+        navigator.geolocation.getCurrentPosition(onSuccess, onError);    
+    }
+        
+    function watchPosition() {
+        // Update every 3 seconds
+        var options = { frequency: 3000 };
+        watchID = navigator.geolocation.watchPosition(onSuccess, onError, options);        
+    }
+    // onSuccess Geolocation
+    //
+    function onSuccess(position) {
+        var element = document.getElementById('geolocation');
+        element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
+                            'Longitude: '          + position.coords.longitude             + '<br />' +
+                            'Altitude: '           + position.coords.altitude              + '<br />' +
+                            'Accuracy: '           + position.coords.accuracy              + '<br />' +
+                            'Altitude Accuracy: '  + position.coords.altitudeAccuracy      + '<br />' +
+                            'Heading: '            + position.coords.heading               + '<br />' +
+                            'Speed: '              + position.coords.speed                 + '<br />' +
+                            'Timestamp: '          + new Date(position.timestamp)          + '<br />';
+    }
+
+    // onError Callback receives a PositionError object
+    //
+    function onError(error) {
+        alert('code: '    + error.code    + '\n' +
+              'message: ' + error.message + '\n');
+    }
+*/
+
+
+
+/*
 function checkLocation() {
     var win = function(position) {
         var lat = position.coords.latitude;
-        var long = position.coords.longitude;
-        var myLatlng = new google.maps.LatLng(lat, long);
+        var longi = position.coords.longitude;
+        var myLatlng = new google.maps.LatLng(lat, longi);
 
         var myOptions = {
             center: myLatlng,
@@ -20,9 +66,10 @@ function checkLocation() {
     };
 
     watchID = navigator.geolocation.getCurrentPosition(win, fail);
-} 
+}
+*/
 
-/*
+
 function loader() {
         var state = document.readyState;
         if (state == 'loaded' || state == 'complete') {
@@ -48,39 +95,4 @@ function run() {
         };
         navigator.geolocation.getCurrentPosition(win, fail);
         } 
-*/
 
-
-/*
-   function preventBehavior(e)
-        {
-      e.preventDefault();
-    };
-        document.addEventListener("touchmove", preventBehavior, false);
-
-        function onBodyLoad()
-        {
-                document.addEventListener("deviceready", onDeviceReady, false);
-        }
-
-        function onDeviceReady()
-        {
-                // do your thing!
-
-        var onSuccess = function(position) {
-
-    document.getElementById('map').src="http://maps.googleapis.com/maps/api/staticmap?center="+ position.coords.latitude +","+ position.coords.longitude +"&amp;zoom=20&amp;size=300x300&amp;sensor=true";
-
-        };
-
-        // onError Callback receives a PositionError object
-
-        function onError(error) {
-        alert('code: '    + error.code    + 'n' +
-          'message: ' + error.message + 'n');
-        }
-
-        navigator.geolocation.getCurrentPosition(onSuccess, onError);
-
-        }
-*/
