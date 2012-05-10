@@ -14,18 +14,19 @@
     <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
     <script src="../cordova-1.7.0rc1.js"></script>
+    <script src="js/locate.js"></script>
     <link href="styles.css" rel="stylesheet" type="text/css" />
     <title>Sales College of Northwest Ohio</title>
 </head>
 
-<body>
+<body onload="loader();">
     <div>
         <h1>Sales College of Northwest Ohio</h1>
         <h2>Client Pre-Brief / De-Brief Form</h2>
     </div>
     
-    <a href='additem.html'>Add a Client.</a>
-    <a href='location.html'>Find your current location.</a>
+    <h1>Here is your location!</h1>
+    <img id="map" alt="" />
 
 </body>
 </html>
