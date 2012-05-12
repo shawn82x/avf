@@ -56,10 +56,10 @@
 		F16856B2155A1C9400CC2AA7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F16856B4155A1C9400CC2AA7 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		F16856B6155A1C9400CC2AA7 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
-		F16856BA155A1C9400CC2AA7 /* morgart_crud-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "morgart_crud-Info.plist"; sourceTree = "<group>"; };
+		F16856BA155A1C9400CC2AA7 /* morgart_crud-Info.plist */ = {isa = PBXFileReference; path = "morgart_crud-Info.plist"; sourceTree = "<group>"; };
 		F16856BC155A1C9400CC2AA7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F16856BE155A1C9400CC2AA7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F16856C0155A1C9400CC2AA7 /* morgart_crud-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "morgart_crud-Prefix.pch"; sourceTree = "<group>"; };
+		F16856C0155A1C9400CC2AA7 /* morgart_crud-Prefix.pch */ = {isa = PBXFileReference; path = "morgart_crud-Prefix.pch"; sourceTree = "<group>"; };
 		F16856C1155A1C9400CC2AA7 /* Cordova.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cordova.framework; path = /Users/Shared/Cordova/Frameworks/Cordova.framework; sourceTree = "<absolute>"; };
 		F16856C6155A1C9400CC2AA7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F16856CA155A1C9400CC2AA7 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = Resources/es.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -494,7 +494,7 @@
 					"-weak_library",
 					/usr/lib/libSystem.B.dylib,
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = morgart_crud;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -525,7 +525,7 @@
 					"-weak_library",
 					/usr/lib/libSystem.B.dylib,
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = morgart_crud;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
