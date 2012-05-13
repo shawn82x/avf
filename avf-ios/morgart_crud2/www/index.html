@@ -12,10 +12,14 @@
     <meta name="MobileOptimized" content="320" />
     <link rel="stylesheet" href="styles/jquery.mobile-1.1.0.min.css" />
     <link href="styles/styles.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript"
+        src="http://maps.googleapis.com/maps/api/js?v=3.6&key=AIzaSyAX_yjJEQbcQ91Rq_uHiDQsixKauZ8yMAc&sensor=true">
+        </script>
     <script src="js/jquery-1.7.2.min.js"></script>
     <script src="js/jquery.mobile-1.1.0.min.js"></script>
     <script src="js/cordova.ios.js"></script>
     <script src="js/accel.js"></script>
+    <script src="js/locate.js"></script>
     <title>Sales College of Northwest Ohio</title>
 </head>
 
@@ -25,9 +29,11 @@
         <h2>Client Pre-Brief / De-Brief Form</h2>
     </div>
     
-    <a href='additem.html'>Add a Client.</a>
-    <a href='location.html'>Find Your Location.</a>
-    
+    <a type="button" href='additem.html'>Add a Client.</a>
+    <hr>
+    <a type="button" href='location.html'>Find Your Location.</a>
+    <hr>
+    <button  onclick="getCurrentAcceleration();">Get Current Acceleration</button>
 
-</body>
+    </body onload="onBodyLoad()">
 </html>
