@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F138897D1566BAD100CB64E2 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F138897C1566BAD100CB64E2 /* MainViewController.xib */; };
-		F13889801566BB0200CB64E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F138897F1566BB0200CB64E2 /* main.m */; };
 		F1431766155DC95800E4DA6C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1431765155DC95800E4DA6C /* Foundation.framework */; };
 		F1431768155DC95800E4DA6C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1431767155DC95800E4DA6C /* UIKit.framework */; };
 		F143176A155DC95800E4DA6C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1431769155DC95800E4DA6C /* CoreGraphics.framework */; };
@@ -44,9 +42,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F138897C1566BAD100CB64E2 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainViewController.xib; path = ../../../../Desktop/RecordingGap/RecordingGap/Classes/MainViewController.xib; sourceTree = "<group>"; };
-		F138897F1566BB0200CB64E2 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ../../../../Desktop/RecordingGap/RecordingGap/Plugins/main.m; sourceTree = "<group>"; };
-		F13889811566BB0E00CB64E2 /* RecordingGap-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "RecordingGap-Prefix.pch"; path = "../../../../Desktop/RecordingGap/RecordingGap/Plugins/RecordingGap-Prefix.pch"; sourceTree = "<group>"; };
 		F1431761155DC95800E4DA6C /* morgart_crud2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = morgart_crud2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1431765155DC95800E4DA6C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F1431767155DC95800E4DA6C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -172,7 +167,6 @@
 		F1431780155DC95800E4DA6C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F138897C1566BAD100CB64E2 /* MainViewController.xib */,
 				F1431781155DC95800E4DA6C /* morgart_crud2-Info.plist */,
 				F1431782155DC95800E4DA6C /* InfoPlist.strings */,
 				F1431785155DC95800E4DA6C /* main.m */,
@@ -263,8 +257,6 @@
 		F14317B4155DC95900E4DA6C /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
-				F13889811566BB0E00CB64E2 /* RecordingGap-Prefix.pch */,
-				F138897F1566BB0200CB64E2 /* main.m */,
 				F14317B5155DC95900E4DA6C /* README */,
 			);
 			name = Plugins;
@@ -342,7 +334,6 @@
 				F14317B3155DC95900E4DA6C /* MainViewController.xib in Resources */,
 				F14317B7155DC95900E4DA6C /* verify.sh in Resources */,
 				F14317BE155DCAA300E4DA6C /* www in Resources */,
-				F138897D1566BAD100CB64E2 /* MainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,7 +363,6 @@
 				F1431786155DC95800E4DA6C /* main.m in Sources */,
 				F14317AE155DC95900E4DA6C /* AppDelegate.m in Sources */,
 				F14317B1155DC95900E4DA6C /* MainViewController.m in Sources */,
-				F13889801566BB0200CB64E2 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
