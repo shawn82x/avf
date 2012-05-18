@@ -12,22 +12,22 @@
     <meta name="MobileOptimized" content="320" />
     <link rel="stylesheet" href="styles/jquery.mobile-1.1.0.min.css" />
     <link href="styles/styles.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript"
+        src="http://maps.googleapis.com/maps/api/js?v=3.6&key=AIzaSyAX_yjJEQbcQ91Rq_uHiDQsixKauZ8yMAc&sensor=true">
+        </script>
     <script src="js/jquery-1.7.2.min.js"></script>
     <script src="js/jquery.mobile-1.1.0.min.js"></script>
-    <script src="../cordova-1.7.0rc1.js"></script>
+    <script src="js/cordova.ios.js"></script>
     <script src="js/locate.js"></script>
     <title>Sales College of Northwest Ohio</title>
 </head>
 
-<body onload="loader();">
-    <div>
-        <h1>Sales College of Northwest Ohio</h1>
-        <h2>Client Pre-Brief / De-Brief Form</h2>
-    </div>
-    <div>
-	<h2>Here is your location!</h2>
-	<img id="map" alt="A map, pinpointing your current location." />
-    </div>
-    
-</body>
+
+    <body>
+        <button onclick="getMyLoc()">Get Location</button>
+        <img style="display:none;width:600px;height:600px;" id="smallImage" src="" />
+        <img style="display:none;" id="largeImage" src="" />
+        <p id="geolocation"></p>
+        <img id="map" />
+    </body>
 </html>

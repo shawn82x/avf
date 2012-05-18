@@ -1,7 +1,13 @@
-
-function getMyLoc() {
-  navigator.geolocation.getCurrentPosition(onSuccess, onError);
-}
+// Wait for PhoneGap to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+    
+     // PhoneGap is ready
+    //
+    function onDeviceReady() {
+    	function getMyLoc() {
+		  navigator.geolocation.getCurrentPosition(onSuccess, onError);
+		}
 
 function onSuccess(position) {
   var element = document.getElementById('geolocation');
@@ -18,4 +24,5 @@ function onError(error) {
   alert('code: '    + error.code    + '\n' +
         'message: ' + error.message + '\n');
 }
+
 
