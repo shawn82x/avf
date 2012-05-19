@@ -85,7 +85,7 @@ window.addEventListener("DOMContentLoaded", function(){
     }
 
     function storeData(key) {
-        // If there is no key, this means this is a brand new item and we need a  new key.
+        // If there is no key, this means this is a brand new item and we need a new key.
         if (!key){
             var id          = Math.floor(Math.random()*1000000001);
         }else{

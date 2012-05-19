@@ -20,7 +20,9 @@
         <script src="js/cordova-1.7.0rc1.js"></script>
         <script src="js/accel.js"></script>
         <script src="js/locate.js"></script>
-<!--        <script src="js/recorder.js"></script>  -->
+        <script src="js/camera.js"></script>
+        <script src="js/compass.js"></script>
+<!--        <script src="js/recorder.js"></script> -->
         <script src="js/main.js"></script>
         <title>Sales College of Northwest Ohio</title>
     </head>
@@ -32,7 +34,11 @@
                 <h2>Client Pre-Brief / De-Brief Form</h2>
             </header>
             
-            <a type="button" href='additem.html'>Add New Client Data.</a>
+            <button onclick="getImage();">Capture Photo</button>
+            <hr>
+            <button onclick="getMyHeading()">Get Compass Heading</button>
+            <hr>
+            <a type="button" href="additem.html">Add New Client.</a>
             <hr>
             <a type="button" href="#page2">Find Your Location.</a>
             <hr>
@@ -60,152 +66,7 @@
         </section>
 <!-- -----------------------------end page 2-------------------------------- -->
 
-<!-- ----------------------------Start page 3------------------------------- -->
-        <section id="page3" data-role="page">
-            <header data-role="header" data-position="fixed"> 
-                <h2>Client Pre-Brief / De-Brief Form</h2>
-            </header>
-            <div data-role="section">
-                <a href='#' id="displayLink" data-role="button" data-inline="true" data-icon="star">Display Saved Clients</a>
-                <a href='additem.html' id="addNew" style="display: none;" data-role="button" data-inline="true" data-icon="plus">Add New Client</a>
-                <a href='#' id="clearLink" data-role="button" data-inline="true" data-icon="alert">Clear Local Data</a>
-            </div>
-            <div data-role="controlgroup" data-type="horizontal">
-                <button  onclick="recordAudio()">Start Audio Recording</button>
-                <p id="media">Recording audio...</p>
-                <p id="audio_position"></p>
-            </div>
-                
-            <form action="#" method="post" id="contactForm">
-                <fieldset data-role="fieldcontain">
-                    <legend>Client Details</legend>
-                    <span>* fields are required.</span>
-                    <ul id="errors"></ul>
-                    <ul data-role="listview">
-                        <li id="select"><label for="group">*Type of Account:</label><br /></li>
-                        <li>
-                            <label for="fname">*First Name: </label>
-                            <input type="text" id="fname" placeholder="John" />
-                        </li>
-                        <li><label for="lname">*Last Name: </label>
-                            <input type="text" id="lname" placeholder="Smith" />
-                        </li>
-                        <li>
-                            <label for="street">*Street: </label>
-                            <input type="text" id="street" placeholder="123 Main St." />
-                        </li>
-                        <li>
-                            <label for="city">*City: </label>
-                            <input type="text" id="city" placeholder="Anytown" />
-                        </li>
-                        <li>
-                            <label for="state">State: </label>
-                            <input type="text" id="state" placeholder="YourState" />
-                        </li>
-                        <li><label for="zip">Zip: </label>
-                            <input type="text" id="zip" placeholder="12345" />
-                        </li>
-                        <li>
-                            <label for="phone">*Phone: </label>
-                            <input type="tel" id="phone" placeholder="123-456-7890" />
-                        </li>
-                        <li>
-                            <label for="email">*Email: </label>
-                            <input type="email" id="email" placeholder="email@email.com" />
-                        </li>
-                    </ul>
-                </fieldset>
-                <fieldset data-role="fieldcontain">
-                    <legend>Neurolinguistics</legend>
-                    <h4>Representational Style</h4>
-                    <span>Ask a Thought-Provoking Question...</span>
-                    <ul data-role="listview">
-                        <li><input type="radio" value="auditory" id="auditory" name="repStyle" /><label for="auditory">Auditory: looks side to side. Talk = Medium.</label></li>
-                        <li><input type="radio" value="visual" id="visual" name="repStyle" /><label for="visual">Visual: looks defocused or up-left or up-right. Talk = Fast.</label></li>
-                        <li><input type="radio" value="kines" id="kines" name="repStyle" /><label for="kines">Kinesthetic: looks down and right. Talk = Slow. "Feeling" words.</label></li>
-                    </ul>
-                    <h4>Meta-Programs</h4>
-                    <span>(Rank -10 to 10)</span>
-                    <ul data-role="listview">
-                        <li><label for="direction">Direction: toward vs. away: </label><span id="result" >0</span></li>
-                        <li><input type="range" id="direction" min="-10" max="10" onChange="showValue(this.value);"/></li>
-                        <li><label for="source">Source: internal vs. external: </label></li>
-                        <li><input type="range" name="range" id="source" min="-10" max="10" /></li>
-                        <li><label for="reason">Reason: options vs. procedures: </label></li>
-                        <li><input type="range" id="reason" min="-10" max="10" /></li>
-                        <li><label for="level">Level: proactive vs. reactive: </label></li>
-                        <li><input type="range" id="level" min="-10" max="10" /></li>
-                        <li><label for="scope">Scope: big-picture vs. details: </label></li>
-                        <li><input type="range" id="scope" min="-10" max="10" /></li>
-                        <li><label for="change">Change: sameness vs. difference: </label></li>
-                        <li><input type="range" id="change" min="-10" max="10" /></li>
-                    </ul>
-                    <h4>Channel</h4>
-                    <ul data-role="listview">
-                        <li><input type="radio" value="see" id="see" name="channel" /><label for="see">See: Must see examples.</label></li>
-                        <li><input type="radio" value="hear" id="hear" name="channel" /><label for="hear">Hear: Must hear how or hear about.</label></li>
-                        <li><input type="radio" value="read" id="read" name="channel" /><label for="read">Read: Must read information themselves.</label></li>
-                        <li><input type="radio" value="do" id="do" name="channel" /><label for="do">Do: Must do it or use it to be convinced.</label></li>
-                    </ul>
-                    <h4>Convincer</h4>
-                    <ul data-role="listview">
-                        <li><input type="radio" value="overtime" id="overtime" name="convincer" /><label for="overtime">Period of Time: data must remain Consistant.</label></li>
-                        <li><input type="radio" value="repetition" id="repetition" name="convincer" /><label for="repetition">Repetition: must have data a particular number of times.</label></li>
-                        <li><input type="radio" value="automatic" id="automatic" name="convincer" /><label for="automatic">Automatic: need partial information, assume the rest to decide.</label></li>
-                        <li><input type="radio" value="consistent" id="consistent" name="convincer" /><label for="consistent">Consistent: never really convinced, get info Every time.</label></li>
-                    </ul>
-                </fieldset>
-                <fieldset data-role="fieldcontain">
-                    <legend>Values</legend>
-                    <span>(Rank 0 to 100)</span>
-                    <ul data-role="listview">
-                        <li><label for="theor">Theoretical: knowledge, problem solver.</label></li>
-                        <li><input type="range" id="theor" min="0" max="100" value="0" step="5" /></li>
-                        <li><label for="util">Utilitarian: practicality, money.</label></li>
-                        <li><input type="range" id="util" min="0" max="100" value="0" step="5" /></li>
-                        <li><label for="aesth">Aesthetic: creativity, enjoyment.</label></li>
-                        <li><input type="range" id="aesth" min="0" max="100" value="0" step="5" /></li>
-                        <li><label for="soci">Social: selflessness, generosity.</label></li>
-                        <li><input type="range" id="soci" min="0" max="100" value="0" step="5" /></li>
-                        <li><label for="indiv">Individualistic: leading, achieving.</label></li>
-                        <li><input type="range" id="indiv" min="0" max="100" value="0" step="5" /></li>
-                        <li><label for="trad">Traditional: by the "book".</label></li>
-                        <li><input type="range" id="trad" min="0" max="100" value="0" step="5" /></li>
-                    <ul>
-                </fieldset>
-                <fieldset data-role="fieldcontain">
-                    <legend>Behavioral Styles</legend>
-                    <h4>Social Style</h4>
-                    <ul data-role="listview">
-                        <li><input type="radio" value="driver" id="driver" name="socialstyle" /><label for="driver">Driver: work-focus / extrovert.</label></li>
-                        <li><input type="radio" value="expressive" id="expressive" name="socialstyle" /><label for="expressive">Expressive: people-focus / extrovert.</label></li>
-                        <li><input type="radio" value="amiable" id="amiable" name="socialstyle" /><label for="amiable">Amiable: people-focus / introvert</label></li>
-                        <li><input type="radio" value="analytical" id="analytical" name="socialstyle" /><label for="analytical">Analytical: work-focus / introvert.</label></li>
-                    </ul>            
-                    
-                    <h4>DISC</h4>
-                    <span>(Rank -10 to 10)</span>
-                    <ul data-role="listview">
-                        <li><label for="dom">Dominance: calculating vs. agressive. </label></li>
-                        <li><input type="range" id="dom" min="-10" max="10" /></li>
-                        <li><label for="inf">Influencing: reserved vs. outgoing. </label></li>
-                        <li><input type="range" id="inf" min="-10" max="10" /></li>
-                        <li><label for="stead">Steadiness: unstructured vs. structured. </label></li>
-                        <li><input type="range" id="stead" min="-10" max="10" /></li>
-                        <li><label for="comp">Compliance: makes own rules vs. follows The rules.</label></li>
-                        <li><input type="range" id="comp" min="-10" max="10" /></li>
-                    </ul>
-                </fieldset>
-                
-                 <input type="submit" value="Save Client" input="submit" id="submit" data-role="button"/><br />
-            </form>
-            
-            <footer data-role="footer" data-position="fixed">
-                <h2>Sales College of Northwest Ohio</h2>
-            </footer>
-        </section>
-<!-- -----------------------------end page 3-------------------------------- -->
-        
+<
         
     </body onload="onBodyLoad()">
 </html>
