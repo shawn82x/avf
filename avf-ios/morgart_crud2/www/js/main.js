@@ -3,14 +3,14 @@
 // Author: Shawn R. Morgart
 
 //Wait until the DOM is ready.
-window.addEventListener("DOMContentLoaded", function(){
+$(function(){
 
     //getElementById Function
     function $(x){
         var theElement = document.getElementById(x);
         return theElement;
     }
-   
+
     //Create select field element and populate with options
     function chooseGroup() {
         var formTag = document.getElementsByTagName("form"),
@@ -85,10 +85,10 @@ window.addEventListener("DOMContentLoaded", function(){
     }
 
     function storeData(key) {
-        // If there is no key, this means this is a brand new item and we need a new key.
+        // If there is no key, this means this is a brand new item and we need a  new key.
         if (!key){
-            var id          = Math.floor(Math.random()*1000000001);
-        }else{
+            var id  = Math.floor(Math.random()*1000000001);
+        } else{
         //Set the id to the existing key we're editing so that it will save over the data.
         //This is the same key passed from the editSubmit event handler...
         //to the validate function, then passed here, into the storeData function.
@@ -167,7 +167,7 @@ window.addEventListener("DOMContentLoaded", function(){
             var obj = JSON.parse(value);
             var makeSubList = document.createElement('ul');
             makeli.appendChild(makeSubList);
-            getImage(obj.group[1], makeSubList);
+            // getImage(obj.group[1], makeSubList);
             for(var n in obj){
                 var makeSubli = document.createElement('li');
                 makeSubList.appendChild(makeSubli);
@@ -491,4 +491,4 @@ window.addEventListener("DOMContentLoaded", function(){
     
 
 });
-       
+ 

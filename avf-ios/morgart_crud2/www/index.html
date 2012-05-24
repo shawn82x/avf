@@ -22,7 +22,6 @@
         <script src="js/locate.js"></script>
         <script src="js/camera.js"></script>
         <script src="js/compass.js"></script>
-<!--        <script src="js/recorder.js"></script> -->
         <script src="js/main.js"></script>
         <title>Sales College of Northwest Ohio</title>
     </head>
@@ -34,11 +33,9 @@
                 <h2>Client Pre-Brief / De-Brief Form</h2>
             </header>
             
-            <button onclick="getImage();">Capture Photo</button>
-            <hr>
-            <button onclick="getMyHeading()">Get Compass Heading</button>
-            <hr>
             <a type="button" href="additem.html">Add New Client.</a>
+            <hr>
+            <button onclick="getImage();">Get Client's Photo</button>
             <hr>
             <a type="button" href="#page2">Find Your Location.</a>
             <hr>
@@ -56,6 +53,8 @@
                 <h2>Client Pre-Brief / De-Brief Form</h2>
             </header>
                 <div data-role="content">
+                    <button onclick="getMyHeading()">Get Compass Heading</button>
+                    <hr>
                     <button onclick="getMyLoc()">Get Location</button>
                     <p id="geolocation"></p>
                     <img id="map" />

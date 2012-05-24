@@ -14,7 +14,8 @@
         <meta name="MobileOptimized" content="320" />
 <!--        <link href="styles/styles.css" rel="stylesheet" type="text/css" />  -->
         <link rel="stylesheet" href="styles/jquery.mobile-1.1.0.min.css" />
-        
+        <link rel="stylesheet" href="styles/jquery.mobile.structure-1.1.0.min.css" />
+        <link rel="stylesheet" href="styles/jquery.mobile.theme-1.1.0.min.css" />
         <script type="text/javascript"
             src="http://maps.googleapis.com/maps/api/js?v=3.6&key=AIzaSyAX_yjJEQbcQ91Rq_uHiDQsixKauZ8yMAc&sensor=true">
             </script>
@@ -27,14 +28,14 @@
 </head>
 
 <body>
-        <section id="page3" data-role="page">
+        <section id="page3" data-role="page" data-theme="b" data-add-back-btn="true">
             <header data-role="header" data-position="fixed"> 
                 <h2>Client Pre-Brief / De-Brief Form</h2>
             </header>
             <div data-role="section">
-                <a href='#' id="displayLink" data-role="button" data-inline="true" data-icon="star">Display Saved Clients</a>
-                <a href='additem.html' id="addNew" style="display: none;" data-role="button" data-inline="true" data-icon="plus">Add New Client</a>
-                <a href='#' id="clearLink" data-role="button" data-inline="true" data-icon="alert">Clear Local Data</a>
+                <a href='#' id="displayLink" data-role="button" data-inline="true" >Display Saved Clients</a>
+                <a href='additem.html' id="addNew" style="display: none;" data-role="button" data-inline="true" >Add New Client</a>
+                <a href='#' id="clearLink" data-role="button" data-inline="true" >Clear Local Data</a>
             </div>
                 
             <form action="#" method="post" id="contactForm">
@@ -77,29 +78,28 @@
                     </ul>
                 </fieldset>
                 <fieldset data-role="fieldcontain">
-                    <legend>Neurolinguistics</legend>
                     <h4>Representational Style</h4>
                     <span>Ask a Thought-Provoking Question...</span>
                     <ul data-role="listview">
-                        <li><input type="radio" value="auditory" id="auditory" name="repStyle" /><label for="auditory">Auditory: looks side to side. Talk = Medium.</label></li>
-                        <li><input type="radio" value="visual" id="visual" name="repStyle" /><label for="visual">Visual: looks defocused or up-left or up-right. Talk = Fast.</label></li>
-                        <li><input type="radio" value="kines" id="kines" name="repStyle" /><label for="kines">Kinesthetic: looks down and right. Talk = Slow. "Feeling" words.</label></li>
+                        <li><input type="radio" value="auditory" id="auditory" name="repStyle" /><label for="auditory">Auditory: <em>looks side to side. Talk = Medium.</em></label></li>
+                        <li><input type="radio" value="visual" id="visual" name="repStyle" /><label for="visual">Visual: <em>looks defocused or up-left or up-right. Talk = Fast.</em></label></li>
+                        <li><input type="radio" value="kines" id="kines" name="repStyle" /><label for="kines">Kinesthetic: <em>looks down and right. Talk = Slow. "Feeling" words.</em></label></li>
                     </ul>
                     <h4>Meta-Programs</h4>
                     <span>(Rank -10 to 10)</span>
                     <ul data-role="listview">
-                        <li><label for="direction">Direction: toward vs. away: </label><span id="result" >0</span></li>
-                        <li><input type="range" id="direction" min="-10" max="10" onChange="showValue(this.value);"/></li>
+                        <li><label for="direction">Direction: toward vs. away: </label></li>
+                        <li><input data-type="range" id="direction" min="-10" max="10" /></li>
                         <li><label for="source">Source: internal vs. external: </label></li>
-                        <li><input type="range" name="range" id="source" min="-10" max="10" /></li>
+                        <li><input data-type="range" name="range" id="source" min="-10" max="10" /></li>
                         <li><label for="reason">Reason: options vs. procedures: </label></li>
-                        <li><input type="range" id="reason" min="-10" max="10" /></li>
+                        <li><input data-type="range" id="reason" min="-10" max="10" /></li>
                         <li><label for="level">Level: proactive vs. reactive: </label></li>
-                        <li><input type="range" id="level" min="-10" max="10" /></li>
+                        <li><input data-type="range" id="level" min="-10" max="10" /></li>
                         <li><label for="scope">Scope: big-picture vs. details: </label></li>
-                        <li><input type="range" id="scope" min="-10" max="10" /></li>
+                        <li><input data-type="range" id="scope" min="-10" max="10" /></li>
                         <li><label for="change">Change: sameness vs. difference: </label></li>
-                        <li><input type="range" id="change" min="-10" max="10" /></li>
+                        <li><input data-type="range" id="change" min="-10" max="10" /></li>
                     </ul>
                     <h4>Channel</h4>
                     <ul data-role="listview">
@@ -158,7 +158,7 @@
                     </ul>
                 </fieldset>
                 
-                 <input type="submit" value="Save Client" input="submit" id="submit" data-role="button"/><br />
+                 <input type="submit" value="Save Client" input="submit" id="submit" data-role="button" data-inline="true"/><br />
             </form>
             
             <footer data-role="footer" data-position="fixed">
