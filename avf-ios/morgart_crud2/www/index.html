@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 
+<!-- Shawn R. Morgart, AVF 1205, Project 4-->
+
 <html>
     <head>
         <meta charset="utf-8" />
@@ -10,13 +12,12 @@
         <meta name="viewport" content="target-densitydpi=device-dpi" />
         <meta name="HandheldFriendly" content="True" />
         <meta name="MobileOptimized" content="320" />
-        <link rel="stylesheet" href="styles/jquery.mobile-1.1.0.min.css" />
-<!--        <link href="styles/styles.css" rel="stylesheet" type="text/css" />    -->
-        <script type="text/javascript"
-            src="http://maps.googleapis.com/maps/api/js?v=3.6&key=AIzaSyAX_yjJEQbcQ91Rq_uHiDQsixKauZ8yMAc&sensor=true">
-        </script>
-        <script src="js/jquery-1.7.2.min.js"></script>
-        <script src="js/jquery.mobile-1.1.0.min.js"></script>
+<!--        <link href="styles/styles.css" rel="stylesheet" type="text/css" />  -->
+        <link rel="stylesheet" href="themes/morgart_crud.min.css" />
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile.structure-1.1.0.min.css" />
+        <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?v=3.6&key=AIzaSyAX_yjJEQbcQ91Rq_uHiDQsixKauZ8yMAc&sensor=true"></script>
         <script src="js/cordova-1.7.0rc1.js"></script>
         <script src="js/accel.js"></script>
         <script src="js/locate.js"></script>
@@ -27,13 +28,13 @@
     </head>
     
     <body>
-<!-- -----------------------------start page 1------------------------------ -->
-        <section id="page1" data-role="page">
+<!-- ---------------------------- start page 1 ------------------------------ -->
+        <section id="page1" data-role="page" data-theme="d">
             <header data-role="header" data-position="fixed">
                 <h2>Client Pre-Brief / De-Brief Form</h2>
             </header>
             
-            <a type="button" href="additem.html">Add New Client.</a>
+            <a type="button" href="#page3">Add New Client.</a>
             <hr>
             <button onclick="getImage();">Get Client's Photo</button>
             <hr>
@@ -41,14 +42,14 @@
             <hr>
             <button  onclick="getCurrentAcceleration();">Get Current Acceleration</button>
             
-            <footer data-role="footer" data-position="fixed">
+            <footer data-role="footer" >
                 <h1>Sales College of Northwest Ohio</h1>
             </footer>
         </section>
-<!-- -----------------------------end page 1-------------------------------- -->
+<!-- ---------------------------- end page 1 -------------------------------- -->
         
-<!-- -----------------------------start page 2------------------------------ -->
-        <section id="page2" data-role="page" data-add-back-btn="true">
+<!-- ---------------------------- start page 2 ------------------------------ -->
+        <section id="page2" data-role="page" data-add-back-btn="true" data-theme="d">
             <header data-role="header" data-position="fixed">
                 <h2>Client Pre-Brief / De-Brief Form</h2>
             </header>
@@ -59,13 +60,151 @@
                     <p id="geolocation"></p>
                     <img id="map" />
                 </div>
-            <footer data-role="footer" data-position="fixed">
+            <footer data-role="footer" >
                 <h1>Sales College of Northwest Ohio</h1>
             </footer>
         </section>
-<!-- -----------------------------end page 2-------------------------------- -->
+<!-- ---------------------------- end page 2 -------------------------------- -->
 
-<
+<!-- ---------------------------- start page 3 ------------------------------ -->
+<section id="page3" data-role="page" data-theme="d" data-add-back-btn="true">
+            <header data-role="header" data-position="fixed"> 
+                <h2>Client Pre-Brief / De-Brief Form</h2>
+            </header>
+            <div data-role="section">
+                <a href='#' id="displayLink" data-role="button" data-inline="true" data-icon="grid">Display Saved Clients</a>
+                <a href='additem.html' id="addNew" style="display: none;" data-role="button" data-inline="true" >Add New Client</a>
+                <a href='#' id="clearLink" data-role="button" data-inline="true" data-theme="e" data-icon="alert">Clear Local Data</a>
+            </div>
+                
+            <form action="#" method="post" id="contactForm" >
+                <fieldset data-role="fieldcontain">
+                    <h4>Client Details</h4>
+                    <span>* fields are required.</span>
+                    <ul id="errors"></ul>
+                    <ul data-role="listview" data-theme="e">
+                        <li id="select"><label for="group" >*Type of Account:</label></li>
+                        <li>
+                            <label for="fname">*First Name: </label>
+                            <input type="text" id="fname" placeholder="John" data-theme="b"/>
+                        </li>
+                        <li><label for="lname">*Last Name: </label>
+                            <input type="text" id="lname" placeholder="Smith" data-theme="b"/>
+                        </li>
+                        <li>
+                            <label for="street">*Street: </label>
+                            <input type="text" id="street" placeholder="123 Main St." data-theme="b"/>
+                        </li>
+                        <li>
+                            <label for="city">*City: </label>
+                            <input type="text" id="city" placeholder="Anytown" data-theme="b"/>
+                        </li>
+                        <li>
+                            <label for="state">State: </label>
+                            <input type="text" id="state" placeholder="YourState" data-theme="b"/>
+                        </li>
+                        <li><label for="zip">Zip: </label>
+                            <input type="text" id="zip" placeholder="12345" data-theme="b"/>
+                        </li>
+                        <li>
+                            <label for="phone">*Phone: </label>
+                            <input type="tel" id="phone" placeholder="123-456-7890" data-theme="b"/>
+                        </li>
+                        <li>
+                            <label for="email">*Email: </label>
+                            <input type="email" id="email" placeholder="email@email.com" data-theme="b"/>
+                        </li>
+                    </ul>
+                </fieldset>
+                <fieldset data-role="fieldcontain" >
+                    <h4>Representational Style</h4>
+                    <span>Ask a Thought-Provoking Question...</span>
+                    <ul data-role="listview" data-theme="e">
+                        <li><input type="radio" value="auditory" id="auditory" name="repStyle" /><label for="auditory">Auditory: <em>looks side to side. Talk = Medium.</em></label></li>
+                        <li><input type="radio" value="visual" id="visual" name="repStyle" /><label for="visual">Visual: <em>looks defocused or up-left or up-right. Talk = Fast.</em></label></li>
+                        <li><input type="radio" value="kines" id="kines" name="repStyle" /><label for="kines">Kinesthetic: <em>looks down and right. Talk = Slow. "Feeling" words.</em></label></li>
+                    </ul>
+                    <h4>Meta-Programs</h4>
+                    <span>(Rank -10 to 10)</span>
+                    <ul data-role="listview" data-theme="e">
+                        <li><label for="direction">Direction: <em>toward vs. away</em> </label>
+                            <input data-type="range" id="direction" min="-10" max="10" /></li>
+                        <li><label for="source">Source: <em>internal vs. external</em> </label>
+                            <input data-type="range" name="range" id="source" min="-10" max="10" /></li>
+                        <li><label for="reason">Reason: <em>options vs. procedures</em> </label>
+                            <input data-type="range" id="reason" min="-10" max="10" /></li>
+                        <li><label for="level">Level: <em>proactive vs. reactive</em> </label>
+                            <input data-type="range" id="level" min="-10" max="10" /></li>
+                        <li><label for="scope">Scope: <em>big-picture vs. details</em> </label>
+                            <input data-type="range" id="scope" min="-10" max="10" /></li>
+                        <li><label for="change">Change: <em>sameness vs. difference</em> </label>
+                            <input data-type="range" id="change" min="-10" max="10" /></li>
+                    </ul>
+                    <h4>Channel</h4>
+                    <ul data-role="listview" data-theme="e">
+                        <li><input type="radio" value="see" id="see" name="channel" /><label for="see">See: <em>Must see examples to be convinced.</em></label></li>
+                        <li><input type="radio" value="hear" id="hear" name="channel" /><label for="hear">Hear: <em>Must hear how or hear about to be convinced.</em></label></li>
+                        <li><input type="radio" value="read" id="read" name="channel" /><label for="read">Read: <em>Must read information themselves to be convinced.</em></label></li>
+                        <li><input type="radio" value="do" id="do" name="channel" /><label for="do">Do: <em>Must do it or use it to be convinced.</em></label></li>
+                    </ul>
+                    <h4>Convincer</h4>
+                    <ul data-role="listview" data-theme="e">
+                        <li><input type="radio" value="overtime" id="overtime" name="convincer" /><label for="overtime">Period of Time: <em>data must remain Consistant.</em></label></li>
+                        <li><input type="radio" value="repetition" id="repetition" name="convincer" /><label for="repetition">Repetition: <em>must have data a particular number of times.</em></label></li>
+                        <li><input type="radio" value="automatic" id="automatic" name="convincer" /><label for="automatic">Automatic: <em>need partial information, assume the rest to decide.</em></label></li>
+                        <li><input type="radio" value="consistent" id="consistent" name="convincer" /><label for="consistent">Consistent: <em>never really convinced, must get info Every time.</em></label></li>
+                    </ul>
+                </fieldset>
+                <fieldset data-role="fieldcontain">
+                    <h4>Values</h4>
+                    <span>(Rank 0 to 100)</span>
+                    <ul data-role="listview" data-theme="e">
+                        <li><label for="theor">Theoretical: <em>knowledge, problem solver.</em></label>
+                            <input type="range" id="theor" min="0" max="100" value="0" step="5" /></li>
+                        <li><label for="util">Utilitarian: <em>practicality, money.</em></label>
+                            <input type="range" id="util" min="0" max="100" value="0" step="5" /></li>
+                        <li><label for="aesth">Aesthetic: <em>creativity, enjoyment.</em></label>
+                            <input type="range" id="aesth" min="0" max="100" value="0" step="5" /></li>
+                        <li><label for="soci">Social: <em>selflessness, generosity.</em></label>
+                            <input type="range" id="soci" min="0" max="100" value="0" step="5" /></li>
+                        <li><label for="indiv">Individualistic: <em>leading, achieving.</em></label>
+                            <input type="range" id="indiv" min="0" max="100" value="0" step="5" /></li>
+                        <li><label for="trad">Traditional: <em>by the "book".</em></label>
+                            <input type="range" id="trad" min="0" max="100" value="0" step="5" /></li>
+                    <ul>
+                </fieldset>
+                <fieldset data-role="fieldcontain">
+                    <h4>Social Style</h4>
+                    <ul data-role="listview" data-theme="e">
+                        <li><input type="radio" value="driver" id="driver" name="socialstyle" /><label for="driver">Driver: <em>work-focus / extrovert.</em></label></li>
+                        <li><input type="radio" value="expressive" id="expressive" name="socialstyle" /><label for="expressive">Expressive: <em>people-focus / extrovert.</em></label></li>
+                        <li><input type="radio" value="amiable" id="amiable" name="socialstyle" /><label for="amiable">Amiable: <em>people-focus / introvert</em></label></li>
+                        <li><input type="radio" value="analytical" id="analytical" name="socialstyle" /><label for="analytical">Analytical: <em>work-focus / introvert.</em></label></li>
+                    </ul>            
+                    
+                    <h4>DISC</h4>
+                    <span>(Rank -10 to 10)</span>
+                    <ul data-role="listview" data-theme="e">
+                        <li><label for="dom">Dominance: <em>calculating vs. agressive.</em></label>
+                            <input type="range" id="dom" min="-10" max="10" /></li>
+                        <li><label for="inf">Influencing: <em>reserved vs. outgoing.</em></label>
+                            <input type="range" id="inf" min="-10" max="10" /></li>
+                        <li><label for="stead">Steadiness: <em>unstructured vs. structured.</em></label>
+                            <input type="range" id="stead" min="-10" max="10" /></li>
+                        <li><label for="comp">Compliance: <em>makes own rules vs. follows The rules.</em></label>
+                            <input type="range" id="comp" min="-10" max="10" /></li>
+                    </ul>
+                </fieldset>
+                
+                 <input type="submit" value="Save Client" input="submit" id="submit" data-role="button" data-inline="true"/><br />
+            </form>
+            
+            <footer data-role="footer" data-position="fixed">
+                <h2>Sales College of Northwest Ohio</h2>
+            </footer>
+        </section>
+
+<!-- ---------------------------- end page 3 -------------------------------- -->
         
     </body onload="onBodyLoad()">
 </html>

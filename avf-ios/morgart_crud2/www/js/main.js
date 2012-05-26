@@ -3,7 +3,11 @@
 // Author: Shawn R. Morgart
 
 //Wait until the DOM is ready.
-$(function(){
+// $(document).bind('pageinit', function() {
+ $('#page3').bind( 'pageinit',function(event){
+//    alert( 'This page was just enhanced by jQuery Mobile!' );
+
+
 
     //getElementById Function
     function $(x){
@@ -179,7 +183,7 @@ $(function(){
         }
     }
     
-    // Get the image for the correct category
+/*    // Get the image for the correct category
     function getImage(catName, makeSubList){
         var imageLi = document.createElement('li');
         makeSubList.appendChild(imageLi);
@@ -187,7 +191,7 @@ $(function(){
         var setSrc = newImg.setAttribute("src", "images/"+ catName + ".png");
         imageLi.appendChild(newImg);
     }
-    
+*/    
     // JSON Object which will auto populate local storage.
     function autoFillData(){
         var json = {
@@ -491,4 +495,5 @@ $(function(){
     
 
 });
+
  
