@@ -3,14 +3,14 @@
 // Author: Shawn R. Morgart
 
 //Wait until the DOM is ready.
-// $(document).bind('pageinit', function() {
- $('#page3').bind( 'pageinit',function(event){
+// gebi(document).bind('pageinit', function() {
+ $('#page3').live( 'pageinit',function(event){
 //    alert( 'This page was just enhanced by jQuery Mobile!' );
 
 
 
     //getElementById Function
-    function $(x){
+    function gebi(x){
         var theElement = document.getElementById(x);
         return theElement;
     }
@@ -18,7 +18,7 @@
     //Create select field element and populate with options
     function chooseGroup() {
         var formTag = document.getElementsByTagName("form"),
-            selectLi = $("select"),
+            selectLi = gebi("select"),
             makeSelect = document.createElement("select");
             makeSelect.setAttribute("id", "groups");
         for(var i=0, j=taskGroup.length; i<j; i++){
@@ -71,17 +71,17 @@
    function toggleControls(n){
         switch(n){
             case "on":
-                $('contactForm').style.display = "none";
-                $('clearLink').style.display = "inline";
-                $('displayLink').style.display = "none";
-                $('addNew').style.display = "inline";
+                gebi('contactForm').style.display = "none";
+                gebi('clearLink').style.display = "inline";
+                gebi('displayLink').style.display = "none";
+                gebi('addNew').style.display = "inline";
                 break;
             case "off":
-                $('contactForm').style.display = "block";
-                $('clearLink').style.display = "inline";
-                $('displayLink').style.display = "inline";
-                $('addNew').style.display = "none";
-                $('items').style.display = "none";
+                gebi('contactForm').style.display = "block";
+                gebi('clearLink').style.display = "inline";
+                gebi('displayLink').style.display = "inline";
+                gebi('addNew').style.display = "none";
+                gebi('items').style.display = "none";
                 break;
             default:
                 return false;
@@ -107,41 +107,41 @@
         getRadioSocialstyle();
         
         var item            = {};
-            item.groups     = ["Type of Account:", $("groups").value];
-            item.fname      = ["First Name:", $("fname").value];
-            item.lname      = ["Last Name:", $("lname").value];
-            item.street     = ["Street:", $("street").value];
-            item.city       = ["City:", $("city").value];
-            item.state      = ["State:", $("state").value];
-            item.zip        = ["Zip:", $("zip").value];
-            item.phone      = ["Phone:", $("phone").value];
-            item.email      = ["Email:", $("email").value];
+            item.groups     = ["Type of Account:", gebi("groups").value];
+            item.fname      = ["First Name:", gebi("fname").value];
+            item.lname      = ["Last Name:", gebi("lname").value];
+            item.street     = ["Street:", gebi("street").value];
+            item.city       = ["City:", gebi("city").value];
+            item.state      = ["State:", gebi("state").value];
+            item.zip        = ["Zip:", gebi("zip").value];
+            item.phone      = ["Phone:", gebi("phone").value];
+            item.email      = ["Email:", gebi("email").value];
             item.lineBreak  = [" ", lineBreak];
             item.rep        = ["Representational Style:", repStyleValue];
             item.lineBreak2 = [" ", lineBreak];
-            item.direction  = ["Direction: toward vs. away:", $("direction").value];
-            item.source     = ["Source: internal vs. external:", $("source").value];
-            item.reason     = ["Reason: options vs. procedures:", $("reason").value];
-            item.level      = ["Level: proactive vs. reactive:", $("level").value];
-            item.scope      = ["Scope big-picture vs. details:", $("scope").value];
-            item.change     = ["Change sameness vs. difference:", $("change").value];
+            item.direction  = ["Direction: toward vs. away:", gebi("direction").value];
+            item.source     = ["Source: internal vs. external:", gebi("source").value];
+            item.reason     = ["Reason: options vs. procedures:", gebi("reason").value];
+            item.level      = ["Level: proactive vs. reactive:", gebi("level").value];
+            item.scope      = ["Scope big-picture vs. details:", gebi("scope").value];
+            item.change     = ["Change sameness vs. difference:", gebi("change").value];
             item.lineBreak3 = [" ", lineBreak];
             item.chan       = ["Channel:", channelValue];
             item.conv       = ["Convincer:", convincerValue];
             item.lineBreak4 = [" ", lineBreak];
-            item.theor      = ["Theoretical:", $("theor").value];
-            item.util       = ["Utilitarian:", $("util").value];
-            item.aesth      = ["Aesthetic:", $("aesth").value];
-            item.soci       = ["Social:", $("soci").value];
-            item.indiv      = ["Individualistic:", $("indiv").value];
-            item.trad       = ["Traditional:", $("trad").value];
+            item.theor      = ["Theoretical:", gebi("theor").value];
+            item.util       = ["Utilitarian:", gebi("util").value];
+            item.aesth      = ["Aesthetic:", gebi("aesth").value];
+            item.soci       = ["Social:", gebi("soci").value];
+            item.indiv      = ["Individualistic:", gebi("indiv").value];
+            item.trad       = ["Traditional:", gebi("trad").value];
             item.lineBreak5 = [" ", lineBreak];
             item.social     = ["Social Style:", socialstyleValue];
             item.lineBreak6 = [" ", lineBreak];
-            item.dom        = ["Dominance:", $("dom").value];
-            item.inf        = ["Influencing:", $("inf").value];
-            item.stead      = ["Steadiness:", $("stead").value];
-            item.comp       = ["Compliance:", $("comp").value];
+            item.dom        = ["Dominance:", gebi("dom").value];
+            item.inf        = ["Influencing:", gebi("inf").value];
+            item.stead      = ["Steadiness:", gebi("stead").value];
+            item.comp       = ["Compliance:", gebi("comp").value];
             
         // Save data into Local Storage: Use Stringify to convert our object to a string.
         localStorage.setItem(id, JSON.stringify(item));
@@ -159,8 +159,10 @@
         makeDiv.setAttribute("id", "items");
         var makeList = document.createElement('ul');
         makeDiv.appendChild(makeList);
-        document.body.appendChild(makeDiv);
-        $('items').style.display = "block";
+//        document.body.appendChild(makeDiv);
+        var myVar= gebi('dataHere')
+        myVar.appendChild(makeDiv);
+        gebi('items').style.display = "block";
         for(var i=0, len=localStorage.length; i<len; i++){
             var makeli = document.createElement('li');
             var linksLi = document.createElement("li");
@@ -180,7 +182,7 @@
                 makeSubList.appendChild(linksLi);
             }
             makeItemLinks(localStorage.key(i), linksLi);     //Create edit and delete buttons/link for each item in local storage.
-        }
+        }console.log(makeSubList);
     }
     
 /*    // Get the image for the correct category
@@ -260,15 +262,15 @@
         toggleControls("off");
         
         //populate the form fields with current localStorage values.
-        $("groups").value   = item.group[1];
-        $("fname").value    = item.fname[1];
-        $("lname").value    = item.lname[1];
-        $("street").value   = item.street[1];
-        $("city").value     = item.city[1];
-        $("state").value    = item.state[1];
-        $("zip").value      = item.zip[1];
-        $("phone").value    = item.phone[1];
-        $("email").value    = item.email[1];
+        gebi("groups").value   = item.group[1];
+        gebi("fname").value    = item.fname[1];
+        gebi("lname").value    = item.lname[1];
+        gebi("street").value   = item.street[1];
+        gebi("city").value     = item.city[1];
+        gebi("state").value    = item.state[1];
+        gebi("zip").value      = item.zip[1];
+        gebi("phone").value    = item.phone[1];
+        gebi("email").value    = item.email[1];
         
 //      Radio buttons regarding "Representational Style"
         var radios1 = document.forms[0].repStyle;
@@ -282,12 +284,12 @@
             }
         };
         
-        $("direction").value    = item.direction[1];
-        $("source").value       = item.source[1];
-        $("reason").value       = item.reason[1];
-        $("level").value        = item.level[1];
-        $("scope").value        = item.scope[1];
-        $("change").value       = item.change[1];
+        gebi("direction").value    = item.direction[1];
+        gebi("source").value       = item.source[1];
+        gebi("reason").value       = item.reason[1];
+        gebi("level").value        = item.level[1];
+        gebi("scope").value        = item.scope[1];
+        gebi("change").value       = item.change[1];
 
 //      Radio buttons regarding "Channel"
         var radios2 = document.forms[0].channel;
@@ -318,12 +320,12 @@
         };
 
 
-        $("theor").value        = item.theor[1];
-        $("util").value         = item.util[1];
-        $("aesth").value        = item.aesth[1];
-        $("soci").value         = item.soci[1];
-        $("indiv").value        = item.indiv[1];
-        $("trad").value         = item.trad[1];
+        gebi("theor").value        = item.theor[1];
+        gebi("util").value         = item.util[1];
+        gebi("aesth").value        = item.aesth[1];
+        gebi("soci").value         = item.soci[1];
+        gebi("indiv").value        = item.indiv[1];
+        gebi("trad").value         = item.trad[1];
 
 
 //      Radio buttons regarding "Social Style"
@@ -341,16 +343,16 @@
         };
 
 
-        $("dom").value          = item.dom[1];
-        $("inf").value          = item.inf[1];
-        $("stead").value        = item.stead[1];
-        $("comp").value         = item.comp[1];
+        gebi("dom").value          = item.dom[1];
+        gebi("inf").value          = item.inf[1];
+        gebi("stead").value        = item.stead[1];
+        gebi("comp").value         = item.comp[1];
        
         // Remove the initial listener from the input "save contact" button.
         save.removeEventListener("click", storeData);
         //Change Submit Button Value to Edit Button
-        $('submit').value = "Edit Client";
-        var editSubmit = $('submit');
+        gebi('submit').value = "Edit Client";
+        var editSubmit = gebi('submit');
         //Save the key value established in this function as a property of the editSubmit event
         //so we can use that value when we save the data we edited.
         editSubmit.key = this.key;
@@ -381,13 +383,13 @@
     
     function validate(e){
         //Define the elements I want to check
-        var getGroup    = $("groups");
-        var getFname    = $("fname");
-        var getLname    = $("lname");
-        var getStreet   = $("street");
-        var getCity     = $("city");
-        var getPhone    = $("phone");
-        var getEmail    = $("email");
+        var getGroup    = gebi("groups");
+        var getFname    = gebi("fname");
+        var getLname    = gebi("lname");
+        var getStreet   = gebi("street");
+        var getCity     = gebi("city");
+        var getPhone    = gebi("phone");
+        var getEmail    = gebi("email");
         
         //reset error messages.
         errMsg.innerHTML = "";
@@ -445,7 +447,7 @@
         }
         
         // Email validation
-        var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+gebi/;
         if(!(re.exec(getEmail.value))){
             var emailError = "Please enter a valid email address!";
             getEmail.style.border = "1px solid red";
@@ -477,19 +479,19 @@
      //   taskType;
     var lineBreak = "----------------------------------------";
     chooseGroup();
-    errMsg = $('errors');
+    errMsg = gebi('errors');
         
         
     //Set Link & Submit Click Events
 
     
-    var displayLink = $("displayLink");
+    var displayLink = gebi("displayLink");
     displayLink.addEventListener("click", getData);
     
-    var clearLink = $("clearLink");
+    var clearLink = gebi("clearLink");
     clearLink.addEventListener("click", clearLocal);
       
-    var save = $("submit");
+    var save = gebi("submit");
     save.addEventListener("click", validate);
     
     
