@@ -1,12 +1,12 @@
 function getImage() {
-    navigator.device.capture.captureImage(onSuccess,
+    navigator.device.capture.captureImage(onPhotoSuccess,
                                 onFail,
                                 { 
                                     limit: 1
                                 });
 }
 
-function onSuccess(imageURI) {
+function onPhotoSuccess(imageURI) {
     alert("Image taken");
 }
 

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Shawn Morgart | AVF 1205</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="#">Shawn Morgart | AVF 1205</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li><a href="http://shawn82x/github.com/ASD/index.html">GH Pages</a></li>
+              <li><a href="https://github.com/shawn82x/avf">Github Repo</a></li>
+              <li><a href="http://www.youtube.com/watch?v=b__tqijVCzY&feature=youtu.be">Reflection Video</a></li>
+	      <li><a href="http://shawn82x.github.com/GoodApp/morgart_shawn_MiU_GoodApp/Good_index.html">Working App Old</a></li>
+	      <li><a href="http://shawn82x.github.com/avf/avf-src/index.html">Working App Current</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit">
+        <h1>Shawn's CRUD App</h1>
+        <p>The mobile app I have been working on for several months now has a specific purpose with a specific client. The app is called a "Pre-Brief / De-Brief Sheet" and it is used by individuals who have studied sales techniques at the Sales College of Northwest Ohio. With a "Pre-Brief / De-Brief Sheet" one would take specific notes about their client. This helps the salesperson understand the learning style and values of the client so that they can better achieve <em>Authentic Communitcation</em>.</p>
+        <p><a class="btn btn-inverse btn-large" data-toggle="modal" href="#moreApp">Learn more about the app. &raquo;</a></p>
+      </div>
+
+      <!-- Discussions row of columns -->
+      <div class="row">
+        <div class="span4" id="discussion">
+          <h2 class="disc">Discussion: Week One</h2>
+           <p class="disc">This week we discussed what native features we would like to add to our CRUD app versions in iOS and Android using only HTML and CSS. We were also asked to discuss any "lessons learned" regarding workflow. Click below to see my responses.</p>
+          <p class="disc"><a class="btn btn-inverse" data-toggle="modal" href="#disc1">View Post &raquo;</a></p>
+        </div>
+        <div class="span4" id="discussion">
+          <h2 class="disc">Discussion: Week Two</h2>
+           <p class="disc">This week our discussion topic focused on Accessibility. We were asked to look at ways we could change HTML on our app to make it more accessible to people with different impairments as well as review screen readers, devices and apps that support accessibility features.</p>
+          <p class="disc"><a class="btn btn-inverse" data-toggle="modal" href="#disc2">View Post &raquo;</a></p>
+       </div>
+        <div class="span4" id="discussion">
+          <h2 class="disc">Discussion: Week Three</h2>
+          <p class="disc">Check back soon, but not as soon as Week Two.</p>
+          <p class="disc"><a class="btn btn-inverse" data-toggle="modal" href="#disc3">View Post &raquo;</a></p>
+        </div>
+      </div>
+      
+	<div class="modal hide fade in" id="disc1">
+	  <div class="modal-header">
+	    <h3>Discussion Response One</h3>
+	  </div>
+	  <div class="modal-body">
+	    <p>According to PhoneGap it appears most of the phone features are available for both platforms, at least for the new versions of iOS.</p>
+	    <p>My CRUD app is a very specific form tool for a sales training class that I have taken. It basically helps a sales rep to "profile" a client and save these values. For my app, I would like to make it link to a user's Contact information (why make them duplicate info you already have saved about the client?) The second would be the camera, as a tool for the app the camera could be used, not only to photo the client, but to photo their environment.</p>
+	    <p>Workflow... I have learned that planning is definitely important, especially when doing class and working full time. For me, workflow means to layout the idea for the app and see what it is that I intend for it to do, first. I prefer to have the background structure put together and make the app function next, then to deal with beautifying it last.</p>
+	    <p>As of yet I don't have any clear intentions for the Demo App, I will be starting on that this afternoon. For my revised version of the CRUD app, A) make it fully functional. B) Add the new features, have the app connect directly to the contacts already on the phone and offer a place to take photos and pull them back up within the app.</p>
+	  </div>
+	  <div class="modal-footer">
+	    <a href="#" data-dismiss="modal" class="btn">Close</a>
+	  </div>
+	</div>
+	
+	<div class="modal hide fade in" id="disc2">
+	  <div class="modal-header">
+	    <h3>Discussion Response Two</h3>
+	  </div>
+	  <div class="modal-body">
+	    <p><em>1. What are some of the ways that you could change your HTML on your Demo app to be more accessible? (Remember, you can use the Section tag with jQuery, for instance)</em> Clean code with concise tags would be a good start. This is the first I have even considered such things as they have not been discussed in any previous classes. This idea definitely makes me want to pay better attention to how I write my code, especially for regular websites and such.</p>
+	    <p><em>2. Visit a video service on the web (like YouTube) and search for "Screen Reader Demo" and "Mobile Screen Reader" - what are some of the common frustrations (or common support mechanisms) that you see among the examples that are given - how could you fix them (or use them)?</em>In my research I found that the current use of AJAX can cause issues for screen readers. AJAX can cause dynamic changes to the web page without a page refresh, while the popular screen readers buffer the DOM when loading the page and therefore won't always register the changes brought about by the AJAX elements. Other common problems result from poorly written code and lack of using descriptive tags that help the screen reader recognize elements or give more information to the listener.</p>
+	    <p><em>3. Devices: Please list two devices (and some of their features) that are made specifically to support Accessibility.</em>The DrawBraille is a smartphone whereas the "touch screen" is a braille face that move the dots up or down to "display" different words. The lower portion then allows the user to type in braille as well. It claims to be a full featured smartphone with many of the same abilities as the iPhone. Macs and the iPad come with a feature, provided by Apple, called VoiceOver. It allows " gesture support, braille display mirroring, web spots, and spoken hints. It also offers frequently requested features including autospeaking web pages, “read all,” web page summary, web table support, user-created labels, customizable verbosity, and more." While I haven't tried it out myself it looks very cool. I didn't even know it was there until researching this post.</p>
+	    <p><em>4. Mobile Apps: Please list two apps (either Android or iOS, or both) that are made specifically to support Accessibility.</em>The app Mobile Accessibility for Android looks like it does it all. Making most of the basic smartphone features accessible through speach and read-back. It works with Phone, Contacts, SMS, Alarms, Web, Calender, Email, Where Am I?, Apps and Settings. Another app IDEAL Item Identifier allows the reading of barcodes then looks up the item and reads to the user what the item is, helping the blind function in stores.</p>
+	  </div>
+	  <div class="modal-footer">
+	    <a href="#" data-dismiss="modal" class="btn">Close</a>
+	  </div>
+	</div>
+	
+	<div class="modal hide fade in" id="disc3">
+	  <div class="modal-header">
+	    <h3>Discussion Response Three</h3>
+	  </div>
+	  <div class="modal-body">
+	    <p>Coming Soon!</p>
+	  </div>
+	  <div class="modal-footer">
+	    <a href="#" data-dismiss="modal" class="btn">Close</a>
+	  </div>
+	</div>
+	
+	<div class="modal hide fade in" id="moreApp">
+	  <div class="modal-header">
+	    <h3>Pre-Brief / De-Brief App Details</h3>
+	  </div>
+	  <div class="modal-body">
+	    <h3>Current Features</h3>
+	    <p>It is a convenient to use app with forms featuring buttons and sliders, neatly arranged in accordion style menus categorized for ease of use.</p>
+	    <h3>Planned Features</h3>
+	    <h4>Android & iOS</h4>
+		<ul>
+		    <li><b>Contacts Integration:</b> Why type in all that information again, in another app?</li>
+		    <li><b>Camera:</b> What does the client look like? What about their surroundings?</li>
+		    <li><b>Media:</b> Record the interview for later listening.</li>
+		</ul>
+	    <h4>Android Only</h4>
+		<ul>
+		    <li>Unsure at this point.</li>
+		</ul>
+	    <h4>iOS Only</h4>
+		<ul>
+		    <li>Unsure at this point.</li>
+		</ul>
+	    
+	  </div>
+	  <div class="modal-footer">
+	    <a href="#" data-dismiss="modal" class="btn">Close</a>
+	  </div>
+	</div>
+	
+	<hr>
+          
+      <!-- Video row of columns-->
+          
+      <div class="row">
+        <div class="span4" id="discussion">
+          <h2 class="disc">Video Test</h2>
+          <video width="360" height="300" controls="true" >
+            <source src="movie/html.mp4" type="video/mp4" />
+            <source src="movie/html.webm" type="video/webm" />
+            <source src="movie/html.ogv" type="video/ogv" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="span4" id="discussion">
+          <h2 class="disc">Video Recap: Week Two</h2>
+          <video width="360" height="300" controls="true" >
+            <source src="movie/.mp4" type="video/mp4" />
+            <source src="movie/week1.theora.ogv" type="video/ogv" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="span4" id="discussion">
+          <h2 class="disc">Video Recap: Week Three</h2>
+          <video width="360" height="300" controls="true" >
+            <source src="movie/.mp4" type="video/mp4" />
+            <source src="movie/" type="video/ogv" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <hr>
+      </div>
+
+    </div> <!-- /container -->
+
+    <!-- javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap-transition.js"></script>
+    <script src="js/bootstrap-alert.js"></script>
+    <script src="js/bootstrap-modal.js"></script>
+    <script src="js/bootstrap-dropdown.js"></script>
+    <script src="js/bootstrap-scrollspy.js"></script>
+    <script src="js/bootstrap-tab.js"></script>
+    <script src="js/bootstrap-tooltip.js"></script>
+    <script src="js/bootstrap-popover.js"></script>
+    <script src="js/bootstrap-button.js"></script>
+    <script src="js/bootstrap-collapse.js"></script>
+    <script src="js/bootstrap-carousel.js"></script>
+    <script src="js/bootstrap-typeahead.js"></script>
+
+  </body>
+</html>

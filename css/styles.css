@@ -1,0 +1,59 @@
+
+
+.wrap {
+    width: 95%;
+    margin: auto;
+}
+
+h1 {
+    color: lightgray;
+    padding-left: 30px;
+}
+
+h2 {
+    color: darkred;
+    text-outline: 2px, black;
+    
+}
+
+h3 {
+    margin: 10px;
+}
+
+.research {
+    border: dashed;
+    border-color: lightgray;
+    padding: 10px;
+    width: 45%;
+    height: auto;
+    float: left;
+}
+
+aside {
+    border: dashed;
+    border-color: lightgray;
+    padding: 10px;
+    width: 45%;
+    float: right;
+    margin-bottom: 10px;
+}
+
+body {
+    background-image: url(../img/CorkBoard.jpg);
+}
+
+#discussion {
+    background-image: url(../img/7.jpg);
+}
+
+.disc {
+    padding: 10px;
+}
+
+#discussion p {
+    font-size: 16px;
+}
+
+video {
+    margin: 5px;
+}

@@ -1,16 +1,8 @@
-
-
-function onBodyLoad(){
-    document.addEventListener("deviceready",onDeviceReady,false);
+// Wait for PhoneGap to load
+//
+function getCurrentAcceleration() {
+    navigator.accelerometer.getCurrentAcceleration(onAccelerationSuccess, onError);
 }
-
-// PhoneGap is ready
-
-function onDeviceReady(){
-
-    function getCurrentAcceleration() {
-        navigator.accelerometer.getCurrentAcceleration(onAccelerationSuccess, onError);
-    };
     
     // onSuccess: Get current acceleration
     
@@ -28,4 +20,3 @@ function onDeviceReady(){
         
         alert ("onError");
     };
-}
