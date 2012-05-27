@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 
+<!-- Shawn R. Morgart, AVF 1205, Project 4-->
+
 <html>
     <head>
         <meta charset="utf-8" />
@@ -10,63 +12,77 @@
         <meta name="viewport" content="target-densitydpi=device-dpi" />
         <meta name="HandheldFriendly" content="True" />
         <meta name="MobileOptimized" content="320" />
-        <link rel="stylesheet" href="styles/jquery.mobile-1.1.0.min.css" />
-<!--        <link href="styles/styles.css" rel="stylesheet" type="text/css" />    -->
-        <script type="text/javascript"
-            src="http://maps.googleapis.com/maps/api/js?v=3.6&key=AIzaSyAX_yjJEQbcQ91Rq_uHiDQsixKauZ8yMAc&sensor=true">
-        </script>
-        <script src="js/jquery-1.7.2.min.js"></script>
-        <script src="js/jquery.mobile-1.1.0.min.js"></script>
+<!--        <link href="styles/styles.css" rel="stylesheet" type="text/css" />  -->
+        <link rel="stylesheet" href="themes/morgart_crud.min.css" />
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile.structure-1.1.0.min.css" />
+        <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?v=3.6&key=AIzaSyAX_yjJEQbcQ91Rq_uHiDQsixKauZ8yMAc&sensor=true"></script>
         <script src="js/cordova-1.7.0rc1.js"></script>
         <script src="js/accel.js"></script>
         <script src="js/locate.js"></script>
         <script src="js/camera.js"></script>
         <script src="js/compass.js"></script>
-<!--        <script src="js/recorder.js"></script> -->
         <script src="js/main.js"></script>
         <title>Sales College of Northwest Ohio</title>
     </head>
     
     <body>
-<!-- -----------------------------start page 1------------------------------ -->
-        <section id="page1" data-role="page">
+<!-- ---------------------------- start page 1 ------------------------------ -->
+        <section id="page1" data-role="page" data-theme="d">
             <header data-role="header" data-position="fixed">
                 <h2>Client Pre-Brief / De-Brief Form</h2>
             </header>
             
-            <button onclick="getImage();">Capture Photo</button>
-            <hr>
-            <button onclick="getMyHeading()">Get Compass Heading</button>
-            <hr>
             <a type="button" href="additem.html">Add New Client.</a>
+            <hr>
+            <button onclick="getImage();">Get Client's Photo</button>
             <hr>
             <a type="button" href="#page2">Find Your Location.</a>
             <hr>
             <button  onclick="getCurrentAcceleration();">Get Current Acceleration</button>
             
-            <footer data-role="footer" data-position="fixed">
+            <footer data-role="footer" >
                 <h1>Sales College of Northwest Ohio</h1>
             </footer>
         </section>
-<!-- -----------------------------end page 1-------------------------------- -->
+<!-- ---------------------------- end page 1 -------------------------------- -->
         
-<!-- -----------------------------start page 2------------------------------ -->
-        <section id="page2" data-role="page" data-add-back-btn="true">
+<!-- ---------------------------- start page 2 ------------------------------ -->
+        <section id="page2" data-role="page" data-add-back-btn="true" data-theme="d">
             <header data-role="header" data-position="fixed">
                 <h2>Client Pre-Brief / De-Brief Form</h2>
             </header>
                 <div data-role="content">
+                    <button onclick="getMyHeading()">Get Compass Heading</button>
+                    <hr>
                     <button onclick="getMyLoc()">Get Location</button>
                     <p id="geolocation"></p>
                     <img id="map" />
                 </div>
-            <footer data-role="footer" data-position="fixed">
+            <footer data-role="footer" >
                 <h1>Sales College of Northwest Ohio</h1>
             </footer>
         </section>
-<!-- -----------------------------end page 2-------------------------------- -->
+<!-- ---------------------------- end page 2 -------------------------------- -->
 
-<
+<!-- ---------------------------- start page 'whatever' -------------------------------- -->
+        <section id="whatever" data-role="page" data-add-back-btn="true" data-theme="d">
+            <header data-role="header" data-position="fixed">
+                <h2>Client Pre-Brief / De-Brief Form</h2>
+            </header>
+                <div data-role="content">
+                    
+                </div>
+            <footer data-role="footer" >
+                <h1>Sales College of Northwest Ohio</h1>
+            </footer>
+        </section>
+
+
+<!-- ---------------------------- end page 'whatever' -------------------------------- -->
+
+
         
     </body onload="onBodyLoad()">
 </html>
